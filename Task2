@@ -1,0 +1,95 @@
+'''Challenge 1: Get the nth number in the fibonacci sequence given n'''
+
+# part 1
+def fibo(n):
+    prev = 0    # Assuming T0 = 0
+    present = 1    # Assuming T1 = 1
+    nxt = present + prev   # Next term is the sum of previous two terms
+    count = 1
+    while count < n:
+        nxt = present + prev
+        prev = present
+        present = nxt
+        count = count + 1
+
+    return nxt
+
+num = int(input("Enter the position of the Fibonnaci number you want: "))
+result = fibo(num)
+print(f'Fibonacci number at position {num} is {result}')
+
+
+
+''' Part 2: Alternatively given a number F, print out whether it's a fibonacci
+ number and what the closest index n in the fibonacci sequence is.'''
+
+def fibo(F):
+    prev = 0    # Assuming T0 = 0
+    present = 1    # Assuming T1 = 1
+    nxt = present + prev   # Next term is the sum of previous two terms
+    nxt_old = nxt    # storing the value of nxt for comparisons
+    count = 1
+    while nxt < F:
+        nxt_old = nxt
+        prev = present
+        present = nxt
+        nxt = present + prev
+        count = count + 1
+
+    if nxt == F:
+        return (True, count+1)
+    else:
+        if abs(nxt_old - F) < abs(nxt - F):
+            return (False, count)
+        else:
+            return(False, count+1)
+
+
+F = int(input("Enter any positive number: "))
+result = fibo(F)
+if result[0] == True:
+    print(f'{F} is a Fibonacci number at position {result[1]}')
+else:
+    print(f'{F} is not a Fibonacci number and it is nearer to Fibonacci number at position {result[1]}')
+
+
+###############################################################################################
+
+
+
+
+'''Challenge 4: Program for Food Ordering System'''
+
+restaurant_names = ['Pizza joint','Food invite','Tasty buds','Paradise pick up','Food court','Mind blowing fast food','Wild burger joint','Awesome pizza place']
+
+menu = {restaurant_names[0]: {'Burger': 25, 'Pizza':20, 'Chips' : 8},
+        restaurant_names[1]: {'Sandwich': 20, 'onion rings':18, 'Fish' : 18},
+        restaurant_names[2]:{'Fried Chicken': 25, 'french fries':25, 'Ice cream' : 10},
+        restaurant_names[3]:{'mashed potatoes': 20, 'chilli potatoes':20, 'pitas' : 10},
+        restaurant_names[4]:{'hamburger': 25, 'big hamburger':20, 'small hamburgers' : 8},
+        restaurant_names[5]:{'Big burger': 25, 'cold coffee':20, 'Hot Coffee' : 8},
+        restaurant_names[6]:{'small Burger': 25, 'Pizza':20, 'Curd' : 8},
+        restaurant_names[7]:{'Hot dog': 25, 'Veg fried rice':20, 'Hot Milk' : 8}}
+
+
+items = set()
+
+for val in menu.values():
+    for itm in val.keys():
+        items.add(itm)
+
+items = {var.lower() for var in items}    # comprehension to convert set entries to all lower caseprint('Following items are available for ordering: ')
+print(items)
+order = input('Enter your order: ')
+order = order.lower()
+if order not in items:
+    print('This item is not available with us for now')
+else:
+    for key, val in menu.items():
+        for itm in val.keys():
+            if itm.lower() == order:
+                name = key
+                price = val[itm]
+
+    print(f'{name}, {order}, ${price}')
+
