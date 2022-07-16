@@ -1,0 +1,33 @@
+The following test cases should be checked before the website goes live.
+
+Home page:
+1. The colour combination is not matching the theme of the website.'Start shopping' CTA colour does not fit to the theme.
+2. The welcome message highlights the word 'good' in green colour which does not seem to add much difference.
+3. A CTA for registration for new users looks ideal on the home page. Makes the website user friendly.
+
+Shop page: 
+1. Category list is missing. Products should be displayed according to the category. Makes it easy while adding new prodcuts and looks systematic.
+2. Provision to click the item to know further details. 
+3. Details like manufacturer, products used to prepare the item, reviews by previous customers, etc.
+
+Contact page: 
+1. The feedback message,'We welcome your feedback- tell it how it is' is not appropriate. 'We welcome your feedback' is short and simple. 
+2. First name and last name can be replaced with forename and surname.
+3. Telephone should have 2 actions. One to select the country code to allow international users to conatct us.
+   And second to provide the contact number.
+
+Login:
+1. The login CTA needs a lot of changes. Provision to register for new usersis missing.
+2. A reset icon to empty the username and password section can be added.
+3. Forgot password link to reset the password if the user has forgotten the credentials.
+
+Cart page:
+1. The quantity should not accept negative integers. 
+2. If quantity is changed to 0 then the subtotal should change the values and not take previous given values.
+3. If quantity is given as 4 then the actions should allow user to remove one item rather than the complete number of items.
+4. Check out: The address section can be expanded by adding street number, city , country and post code.
+5. Telephone should have 2 actions. One to select the country code and second to provide the contact number.
+6. Other service providers are missing in card type. Debit card, paypal, etc. And card verification value number is missing.
+7. After clicking submit the message has spelling error.(number and not nuumber)
+8. An email to confirm the order and order number must be sent out to the users email id.
+9. 'Shopping again' to be replaced with shop again.
